@@ -3,8 +3,11 @@ def isPrime(n, a):
     elif n%a == 0: return False
     else: return isPrime(n, a - 1)
 
-while True:
+def mainLoop():
     num = int(input("Input a number: "))
     if isPrime(num, num-1):
         print("OUT")
-        break
+        return
+    else: mainLoop()
+
+mainLoop()
